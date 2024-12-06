@@ -9,5 +9,4 @@ public class EnumValidatorApplication {
     public static void main(String[] args) {
         SpringApplication.run(EnumValidatorApplication.class, args);
     }
-
 }

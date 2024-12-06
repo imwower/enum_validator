@@ -14,29 +14,28 @@ import java.util.Map;
  */
 
 @Getter
-public enum TestEnum implements Serializable, EnumWithCode {
-    A(100, "A"),
-    B(200, "B"),
-    C(300, "C"),
+public enum ResultCode implements Serializable, EnumWithCode {
+    SUCCESS(0, "success"),
+    BAD_REQUEST(400, "bad request"),
     ;
 
     private final int code;
     private final String value;
 
-    TestEnum(int code, String value) {
+    ResultCode(int code, String value) {
         this.code = code;
         this.value = value;
     }
 
-    static final Map<Integer, TestEnum> enumMap = new HashMap<>();
+    static final Map<Integer, ResultCode> enumMap = new HashMap<>();
 
     static {
-        for (TestEnum type : TestEnum.values()) {
+        for (ResultCode type : ResultCode.values()) {
             enumMap.put(type.getCode(), type);
         }
     }
 
-    public static TestEnum get(Integer value) {
+    public static ResultCode get(Integer value) {
         return enumMap.get(value);
     }
 }
